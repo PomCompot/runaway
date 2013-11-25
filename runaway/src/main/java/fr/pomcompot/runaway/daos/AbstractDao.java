@@ -1,4 +1,4 @@
-package fr.pomcompot.sample.webapp.daos;
+package fr.pomcompot.runaway.daos;
 
 import java.util.List;
 

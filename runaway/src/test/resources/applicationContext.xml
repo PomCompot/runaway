@@ -25,14 +25,14 @@
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.2.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="fr.pomcompot.sample.webapp" />
+	<context:component-scan base-package="fr.pomcompot.runaway" />
 
-	<jpa:repositories base-package="fr.pomcompot.sample.webapp" />
+	<jpa:repositories base-package="fr.pomcompot.runaway" />
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="url"
-			value="jdbc:h2:mem:modernWebapp;TRACE_LEVEL_FILE=4;DB_CLOSE_DELAY=-1" />
+			value="jdbc:h2:mem:runaway;TRACE_LEVEL_FILE=4;DB_CLOSE_DELAY=-1" />
 		<property name="driverClassName" value="org.h2.Driver" />
 		<property name="username" value="" />
 		<property name="password" value="" />

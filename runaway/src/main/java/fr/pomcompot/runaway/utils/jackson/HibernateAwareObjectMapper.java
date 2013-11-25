@@ -1,4 +1,4 @@
-package fr.pomcompot.sample.webapp.utils.jackson;
+package fr.pomcompot.runaway.utils.jackson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;

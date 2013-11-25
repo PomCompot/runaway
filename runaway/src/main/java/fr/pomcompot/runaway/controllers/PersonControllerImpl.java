@@ -1,4 +1,4 @@
-package fr.pomcompot.sample.webapp.controllers;
+package fr.pomcompot.runaway.controllers;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import fr.pomcompot.sample.webapp.daos.PersonRepository;
-import fr.pomcompot.sample.webapp.entities.Person;
+import fr.pomcompot.runaway.daos.PersonRepository;
+import fr.pomcompot.runaway.entities.Person;
 
 @Controller
 public class PersonControllerImpl implements PersonController {

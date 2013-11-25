@@ -1,10 +1,10 @@
-package fr.pomcompot.sample.webapp.controllers;
+package fr.pomcompot.runaway.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import fr.pomcompot.sample.webapp.entities.Person;
+import fr.pomcompot.runaway.entities.Person;
 
 @Controller
 @RequestMapping("/person")

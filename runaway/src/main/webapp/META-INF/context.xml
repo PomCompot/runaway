@@ -2,7 +2,7 @@
 <Context>
 	<Resource auth="Container"
 		type="javax.sql.DataSource"
-		url="jdbc:h2:mem:modernWebapp;TRACE_LEVEL_FILE=4;DB_CLOSE_DELAY=-1"
+		url="jdbc:h2:mem:runaway;TRACE_LEVEL_FILE=4;DB_CLOSE_DELAY=-1"
 		driverClassName="org.h2.Driver"
 		name="jdbc/h2DataSource"
 		user=""
