@@ -1,7 +1,5 @@
 package fr.pomcompot.runaway.entities;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,19 +9,19 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Person {
+public class Participant {
     @Id
-    @Column(name = "idPerson")
+    @Column(name = "idParticipant")
     private Integer id;
 
-    @Column(nullable = false)
-    private String firstname, lastname;
-
-    private Date birthDate;
+    private Integer number;
 
     @ManyToOne
-    private Gender gender;
+    private Club club;
 
     @ManyToOne
-    private City city;
+    private Person person;
+
+    @ManyToOne
+    private Edition edition;
 }

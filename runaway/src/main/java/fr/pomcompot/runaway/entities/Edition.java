@@ -11,19 +11,18 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Person {
+public class Edition {
     @Id
-    @Column(name = "idPerson")
+    @Column(name = "idEdition")
     private Integer id;
 
-    @Column(nullable = false)
-    private String firstname, lastname;
+    private Integer year;
 
-    private Date birthDate;
-
-    @ManyToOne
-    private Gender gender;
+    private Date date;
 
     @ManyToOne
-    private City city;
+    private Competition competition;
+
+    @ManyToOne
+    private Status status;
 }
