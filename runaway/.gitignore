@@ -1,3 +1,5 @@
 /.project
 /database.mwb.bak
 /target
+/.classpath
+/.settings
