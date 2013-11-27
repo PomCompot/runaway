@@ -16,8 +16,6 @@ public class Edition {
     @Column(name = "idEdition")
     private Integer id;
 
-    private Integer year;
-
     private Date date;
 
     @ManyToOne

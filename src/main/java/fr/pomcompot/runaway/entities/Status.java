@@ -11,5 +11,5 @@ import lombok.Data;
 public class Status {
     @Id
     @Column(name = "idStatus")
-    private Integer id;
+    private String id;
 }
