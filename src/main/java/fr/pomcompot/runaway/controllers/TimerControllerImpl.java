@@ -2,6 +2,8 @@ package fr.pomcompot.runaway.controllers;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,9 @@ import fr.pomcompot.runaway.timer.Timer;
 @RequestMapping("/timer")
 public class TimerControllerImpl implements TimerController {
 	private final static Logger LOGGER = LoggerFactory.getLogger(TimerControllerImpl.class);
+	
+	@PersistenceContext
+	private EntityManager entityManager;
 	
 	@Inject
 	private Timer timer;
