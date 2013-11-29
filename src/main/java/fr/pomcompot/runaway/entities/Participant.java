@@ -14,7 +14,7 @@ public class Participant {
     @Column(name = "idParticipant")
     private Integer id;
 
-    private Integer number;
+    private Integer bibNumber;
 
     @ManyToOne
     private Club club;

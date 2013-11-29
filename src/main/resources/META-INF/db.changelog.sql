@@ -80,7 +80,7 @@ CREATE INDEX `fk_Edition_Status_idx` ON `Edition` (`Status_idStatus` ASC) ;
 
 CREATE  TABLE IF NOT EXISTS `Participant` (
   `idParticipant` INT NOT NULL ,
-  `number` INT NOT NULL,
+  `bibNumber` INT NOT NULL,
   `Club_idClub` INT NOT NULL ,
   `Person_idPerson` INT NOT NULL ,
   `Edition_idEdition` INT NOT NULL ,
@@ -105,36 +105,42 @@ CREATE INDEX `fk_Participant_Club_idx` ON `Participant` (`Club_idClub` ASC) ;
 CREATE INDEX `fk_Participant_Person_idx` ON `Participant` (`Person_idPerson` ASC) ;
 CREATE INDEX `fk_Participant_Edition_idx` ON `Participant` (`Edition_idEdition` ASC) ;
 
-CREATE  TABLE IF NOT EXISTS `Score` (
-  `idScore` INT NOT NULL ,
-  `value` INT NULL ,
-  `Participant_idParticipant` INT ,
-  `Validated` INT ,
-  PRIMARY KEY (`idScore`) ,
-  CONSTRAINT `fk_Score_Participant`
+CREATE  TABLE IF NOT EXISTS `Performance` (
+  `idPerformance` INT NOT NULL ,
+  `score` INT NOT NULL,
+  `validated` INT ,
+  `Participant_idParticipant` INT NOT NULL,
+  PRIMARY KEY (`idPerformance`) ,
+  CONSTRAINT `fk_Performance_Participant`
     FOREIGN KEY (`Participant_idParticipant` )
     REFERENCES `Participant` (`idParticipant` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
-CREATE INDEX `fk_Score_Participant_idx` ON `Score` (`Participant_idParticipant` ASC) ;
+CREATE INDEX `fk_Performance_Participant_idx` ON `Performance` (`Participant_idParticipant` ASC) ;
 
-CREATE  TABLE IF NOT EXISTS `PendingScore` (
-  `idPendingScore` INT NOT NULL ,
-  `PendingScorecol` VARCHAR(45) NULL ,
-  `Participant_idParticipant` INT NOT NULL ,
-  `Edition_idEdition` INT NOT NULL ,
-  PRIMARY KEY (`idPendingScore`) ,
-  CONSTRAINT `fk_PendingScore_Participant`
+CREATE  TABLE IF NOT EXISTS `Chronometer` (
+  `idChronometer` INT NOT NULL ,
+  `chrono` INT NOT NULL , 
+  `Participant_idParticipant` INT ,
+  PRIMARY KEY (`idChronometer`) ,
+  CONSTRAINT `fk_Chronometer_Participant`
     FOREIGN KEY (`Participant_idParticipant` )
     REFERENCES `Participant` (`idParticipant` )
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_PendingScore_Edition`
-    FOREIGN KEY (`Edition_idEdition` )
-    REFERENCES `Edition` (`idEdition` )
+    ON UPDATE NO ACTION
+);
+CREATE INDEX `fk_Chronometer_Participant_idx` ON `Chronometer` (`Participant_idParticipant` ASC) ;
+
+CREATE  TABLE IF NOT EXISTS `Rank` (
+  `idRank` INT NOT NULL ,
+  `rank` INT NOT NULL , 
+  `Participant_idParticipant` INT ,
+  PRIMARY KEY (`idRank`) ,
+  CONSTRAINT `fk_Rank_Participant`
+    FOREIGN KEY (`Participant_idParticipant` )
+    REFERENCES `Participant` (`idParticipant` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
-CREATE INDEX `fk_PendingScore_Participant_idx` ON `PendingScore` (`Participant_idParticipant` ASC) ;
-CREATE INDEX `fk_PendingScore_Edition_idx` ON `PendingScore` (`Edition_idEdition` ASC) ;
+CREATE INDEX `fk_Rank_Participant_idx` ON `Rank` (`Participant_idParticipant` ASC) ;
