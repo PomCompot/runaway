@@ -12,4 +12,6 @@ public class City {
     @Id
     @Column(name = "idCity")
     private Integer id;
+
+    private String name;
 }
